@@ -1,0 +1,22 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+<h1>Examples</h1>
+<ul>
+    <li>
+        @Html.ActionLink("Recipe 3-11 - Basic Form","SomeForm")
+    </li>
+    <li>
+        @Html.ActionLink("Recipe 3-12 - Form Using Strongly Typed Helpers", "StronglyTypedForm")
+    </li>
+    <li>
+        @Html.ActionLink("Recipe 3-13  - Form Using Templated Helpers", "StronglyTypedTemplatedForm")
+    </li>
+    <li>
+        @Html.ActionLink("Recipe 3-14  - Form Using Templated Helpers", "InlineHelperForm")
+    </li>
+</ul>

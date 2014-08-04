@@ -1,0 +1,27 @@
+﻿@model Chapter3.Recipe11.Model.LoginViewModel
+@{
+     Layout = "/Views/Shared/_Layout.cshtml";
+     ViewBag.Title = "Strongly Typed View";
+}
+<p>This code is explained in Recipe 3-12</p>
+<h1>Please Log-in</h1>
+@using (Html.BeginForm())
+{
+
+    <div class="form-group">
+        @Html.LabelFor(m=>m.EmailAddress)
+        @Html.TextBoxFor(m=>m.EmailAddress, new { placeholder = "Enter email", @class = "form-control", type = "email" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Password)
+        @Html.PasswordFor(m=>m.Password,new { placeholder = "Password", @class = "form-control" })
+    </div>
+    <div class="checkbox">
+        <label>
+            @Html.LabelFor(m => m.RememberMe)
+            @Html.CheckBoxFor(m=>m.RememberMe)
+        </label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+
+}

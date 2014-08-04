@@ -1,0 +1,18 @@
+﻿@{
+    Layout = "/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Inline Helper Demo";
+}
+
+@helper warning(string message) {
+        <p class="alert alert-warning">@message</p>
+}
+
+
+@Html.Label("","Enter your disposition below")
+@warning("Anything you type can and will be used against you in a cort of law")
+@Html.TextArea("Disposition" , new { @class = "form-control" })
+
+<br />
+@Html.Label("", "Enter your Plea below")
+@warning("If you plead guilty you will be taken to a high security prison!")
+@Html.TextArea("Plea", new { @class = "form-control" })
