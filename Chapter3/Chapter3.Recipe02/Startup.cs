@@ -14,7 +14,7 @@ namespace Chapter3.Recipe02
         {
             // Setup configuration sources
             var configuration = new Configuration();
-            configuration.AddJsonFile("config.json");
+            configuration.AddJsonFile("Config.json");
             configuration.AddEnvironmentVariables();
 
             // Set up application services

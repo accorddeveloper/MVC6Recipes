@@ -1,0 +1,15 @@
+﻿@model Chapter05.Recipe12.Web.Models.ContactMessage
+
+<html>
+<head>
+    <title>Message Rendered Using Razor</title>
+</head>
+<body>
+    <h1>@Model.Subject</h1>
+    <h2>Sender Info</h2>
+    Email: @Model.EmailAdress <br />
+    Name: @Model.Name
+    <h2>Message</h2>
+    @Model.Message
+</body>
+</html>

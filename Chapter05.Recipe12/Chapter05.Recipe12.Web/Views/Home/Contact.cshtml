@@ -1,0 +1,31 @@
+﻿@model Chapter05.Recipe12.Web.Models.ContactMessage
+@{
+    ViewBag.Title = "Contact";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Name, new { @class = "control-label" })<br />
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div><br />
+            <div class="form-group">
+                @Html.LabelFor(m => m.EmailAdress, new { @class = "control-label" })<br />
+                @Html.TextBoxFor(m => m.EmailAdress, new { @class = "form-control" })
+            </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Subject, new { @class = "control-label" })<br />
+            @Html.TextBoxFor(m => m.Subject, new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Message, new { @class = "control-label" })<br />
+            @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
+        </div>
+
+</fieldset>
+    <input type="submit" value="Send Message" class="btn btn-primary" />
+}
+
