@@ -2,7 +2,6 @@
 using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Security;
 using Microsoft.AspNet.Routing;
 using Microsoft.AspNet.Security.Cookies;
 using Microsoft.Data.Entity;
@@ -34,10 +33,7 @@ namespace Chapter1R4
                     options.UseSqlServer(configuration.Get("Data:DefaultConnection:ConnectionString"));
                 });
                 
-                // Add Identity services to the services container
-                services.AddIdentity<ApplicationUser>()
-                    .AddEntityFramework<ApplicationUser, ApplicationDbContext>()
-                    .AddHttpSignIn();
+                
 
                 // Add MVC services to the services container
                 services.AddMvc();
@@ -49,12 +45,7 @@ namespace Chapter1R4
             // Add static files to the request pipeline
             app.UseStaticFiles();
 
-            // Add cookie-based authentication to the request pipeline
-            app.UseCookieAuthentication(new CookieAuthenticationOptions
-            {
-                AuthenticationType = DefaultAuthenticationTypes.ApplicationCookie,
-                LoginPath = new PathString("/Account/Login"),
-            });
+           
 
             // Add MVC to the request pipeline
             app.UseMvc(routes =>

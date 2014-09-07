@@ -29,11 +29,9 @@
     <DevelopmentServerPort>49194</DevelopmentServerPort>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MvcBookChapter1Controller.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\GuitarCaseModel.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
