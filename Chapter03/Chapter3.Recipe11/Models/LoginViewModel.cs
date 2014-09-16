@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Chapter3.Recipe11.Model
@@ -16,5 +17,7 @@ namespace Chapter3.Recipe11.Model
         public string Password { get; set; }
 
         public bool RememberMe { get; set; }
+
+        public bool? RememberMeAlso { get; set; }
     }
 }

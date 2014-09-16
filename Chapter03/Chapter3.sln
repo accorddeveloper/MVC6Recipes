@@ -1,13 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.21901.1
+VisualStudioVersion = 14.0.22013.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chapter3.Recipe01", "Chapter3.Recipe01\Chapter3.Recipe01.kproj", "{8CC99614-79EC-4CAE-9821-D2C29D7537CD}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chapter3.Recipe02", "Chapter3.Recipe02\Chapter3.Recipe02.kproj", "{A72BE0F9-80F2-4D94-94B0-30C11E24049D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chapter3.Recipes02to10", "Chapter3.Recipe02\Chapter3.Recipes02to10.kproj", "{A72BE0F9-80F2-4D94-94B0-30C11E24049D}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chapter3.Recipe11", "Chapter3.Recipe11\Chapter3.Recipe11.kproj", "{2A52530B-5D2B-49EB-8D80-4D792D318599}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Chapter3.Recipes11to14", "Chapter3.Recipe11\Chapter3.Recipes11to14.kproj", "{2A52530B-5D2B-49EB-8D80-4D792D318599}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

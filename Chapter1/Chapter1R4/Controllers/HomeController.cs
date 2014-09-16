@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
-using Chapter1R4.Models;
+using Chapter01.Models;
 
-namespace Chapter1R4.Controllers
+namespace Chapter01.Controllers
 {
     public class HomeController : Controller
     {

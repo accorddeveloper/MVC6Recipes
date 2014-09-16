@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Chapter1R4.Models
+namespace Chapter01.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -43,6 +43,7 @@ namespace Chapter1R4.Models
         public bool RememberMe { get; set; }
     }
 
+    // shown in Listing 1-4
     public class RegisterViewModel
     {
         [Required]

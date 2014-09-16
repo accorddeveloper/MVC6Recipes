@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Chapter1R4.Models
+namespace Chapter01.Models
 {
     /// <summary>
-    /// Summary description for WhatsInMyGuitarCaseModel
+    /// This is the model we are binding to our view
     /// </summary>
     public class GuitarCaseModel
     {
@@ -13,6 +13,9 @@ namespace Chapter1R4.Models
         public Guitar MyGuitar { get; set; }
     }
 
+
+    // the following three classes are local to this file 
+    // but could of also been defined in another assembly
     public class Guitar
     {
         public string Brand { get; set; }
@@ -25,6 +28,7 @@ namespace Chapter1R4.Models
         public string Brand { get; set; }
         public int  Gage { get; set; }
     }
+
     public class GuitarPick
     {
         public string Brand { get; set; }

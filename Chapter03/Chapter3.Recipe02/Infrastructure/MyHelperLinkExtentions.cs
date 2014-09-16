@@ -15,8 +15,12 @@ namespace Chapter3.Recipe02.Infrastructure
             string linkText,
             string actionName)
         {
-            if (helper == null || string.IsNullOrEmpty(linkText))
-                throw new ArgumentNullException();
+            if (helper == null )
+                throw new ArgumentNullException("helper");
+
+            if(string.IsNullOrEmpty(linkText))
+                throw new ArgumentNullException("linkText");
+
             return helper.ActionLink(
                 linkText,
                 actionName,
@@ -34,8 +38,12 @@ namespace Chapter3.Recipe02.Infrastructure
             string actionName,
             string controllerName)
         {
-            if (helper == null || string.IsNullOrEmpty(linkText))
-                throw new ArgumentNullException();
+            if (helper == null)
+                throw new ArgumentNullException("helper");
+
+            if (string.IsNullOrEmpty(linkText))
+                throw new ArgumentNullException("linkText");
+
             return helper.ActionLink(
                 linkText,
                 actionName,

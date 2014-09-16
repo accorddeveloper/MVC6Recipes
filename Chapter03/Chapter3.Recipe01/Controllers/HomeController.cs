@@ -81,7 +81,16 @@ namespace Chapter3.Recipe01.Controllers
 
         public IActionResult CodeNuggets()
         {
-            return View();
+            var model = new Product();
+            model.ProductId = 123;
+            return View(model);
+        }
+
+        public IActionResult ExplicitMarkup()
+        {
+            var model = new Guitar { Brand="Gibson", Model="Les Paul", Strings= new List<string> { "E","A","D","G","B","E"} };
+
+            return View(model);
         }
 
         public IActionResult Comments()

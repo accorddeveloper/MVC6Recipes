@@ -9,16 +9,16 @@
 {
 
    <div class="form-group">
-       @Html.Label("EmailAddress", "Email address", new { @for="exampleInputEmail"})
+       @Html.Label("exampleInputEmail", "Email address")
        @Html.TextBox("exampleInputEmail","",new { placeholder = "Enter email", @class="form-control", type = "email" })
   </div>
   <div class="form-group">
-      @Html.Label("exampleInputPassword1", "Password", new { @for = "exampleInputPassword" })
+      @Html.Label("exampleInputPassword", "Password")
       @Html.Password("exampleInputPassword","", new { placeholder = "Password", @class="form-control" })
   </div>
   <div class="checkbox">
     <label>
-        @Html.Label("RememberMeLable", "Remember Me", new { @for = "RememberMe" })
+        @Html.Label("RememberMe", "Remember Me")
         @Html.CheckBox("RememberMe", false)
     </label>
   </div>

@@ -7,9 +7,9 @@ using Microsoft.AspNet.Security.Cookies;
 using Microsoft.Data.Entity;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
-using Chapter1R4.Models;
+using Chapter01.Models;
 
-namespace Chapter1R4
+namespace Chapter01
 {
     public class Startup
     {

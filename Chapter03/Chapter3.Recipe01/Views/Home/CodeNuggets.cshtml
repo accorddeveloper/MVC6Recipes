@@ -1,0 +1,10 @@
+﻿@model Chapter3.Recipe01.Models.Product
+@{
+     Layout = "/Views/Shared/_Layout.cshtml";
+     ViewBag.Title = "Code Nuggets";
+}
+<h1>Code Nuggets</h1>
+<pre>
+    &lt;img src=&quot;/media/products/guitars/@@(Model.ProductId).jpg&quot; /&gt;
+</pre>
+<img src=/media/products/guitars/@(Model.ProductId).jpg />
