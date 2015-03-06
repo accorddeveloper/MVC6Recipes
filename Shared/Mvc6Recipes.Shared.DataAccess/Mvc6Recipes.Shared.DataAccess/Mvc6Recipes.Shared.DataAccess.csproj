@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D5347D38-43F3-4A98-BA43-31D12577B722}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mvc6Recipes.Shared.DataAccess</RootNamespace>
+    <AssemblyName>Mvc6Recipes.Shared.DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Autofac">
+      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Alert.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertSubscription.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertSubscriptionConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertTag.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AlertTagConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Artist.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistBand.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistBandConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistBlock.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistBlockConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistCollaborationSpace.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistCollaborationSpaceConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistFavorite.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistFavoriteConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistProfile.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistProfileConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistSkill.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ArtistSkillConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Band.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandAudition.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandAuditionComment.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandAuditionCommentConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandAuditionConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandGenre.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BandGenreConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BannedEmailAddress.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BannedEmailAddressConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpace.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceAlert.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceAlertConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceComment.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceCommentConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceFile.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceFileConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceGenre.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceGenreConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceInvite.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceInviteConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceMedia.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CollaborationSpaceMediaConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailOptOut.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailOptOutConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailVerification.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmailVerificationConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FakeDbSet.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="FakeMoBContext.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GenreLookUp.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GenreLookUpConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="IMoBContext.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Medium.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MediumConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Message.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageRecipient.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageRecipientConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageSpam.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MessageSpamConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MoBContext.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Mvc6Dal.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenPosition.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OpenPositionConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayList.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlayListConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaylistItem.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaylistItemConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefactorLog.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="RefactorLogConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\CollaborationSpaceQueryOptions.cs" />
+    <Compile Include="Repository\IWorkSpaceRepository.cs" />
+    <Compile Include="Repository\QueryOptions.cs" />
+    <Compile Include="Repository\WorkSpaceRepository.cs" />
+    <Compile Include="Song.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SongComment.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SongCommentConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SongConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Sysdiagram.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SysdiagramConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Task.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TaskConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebpagesMembership.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebpagesMembershipConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebpagesOAuthMembership.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebpagesOAuthMembershipConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebpagesRoles.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+    <Compile Include="WebpagesRolesConfiguration.cs">
+      <DependentUpon>Mvc6Dal.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="EF.Reverse.POCO.Core.ttinclude" />
+    <None Include="EF.Reverse.POCO.ttinclude" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mvc6Dal.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Mvc6Dal.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
