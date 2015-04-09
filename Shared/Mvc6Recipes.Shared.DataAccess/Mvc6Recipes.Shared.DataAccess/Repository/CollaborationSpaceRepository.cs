@@ -13,7 +13,10 @@ namespace Mvc6Recipes.Shared.DataAccess.Repository
             if (context != null)
                 _context = context;
         }
-
+        public CollaborationSpaceRepository()
+        {
+            _context = new MoBContext();
+        }
         /// <summary>
         /// Gets a list of collaboration spaces, filtered and sorted according to the options
         /// </summary>
@@ -29,6 +32,17 @@ namespace Mvc6Recipes.Shared.DataAccess.Repository
             //var positions = from p in m_ent.ProjectOpenPositions.Include("Band")
             //                where p.ProjectOpenPositionId == openPositionId
             //                select p;
+        }
+
+        public List<CollaborationSpace> GetCollaborationSpacesForArtist(int artistId)
+        {
+            var query = from e in _context.CollaborationSpaces
+                        join a in _context.ArtistCollaborationSpaces
+                        on e.CollaborationSpaceId equals a.CollaborationSpaceId
+                        where a.ArtistId ==artistId
+                        select e;
+            return query.ToList<CollaborationSpace>();
+
         }
 
         /// <summary>

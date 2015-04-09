@@ -31,18 +31,23 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Autofac">
-      <HintPath>..\packages\Autofac.3.3.0\lib\net40\Autofac.dll</HintPath>
+      <HintPath>..\..\..\Chapter08\Recipe02.WebForms\packages\Autofac.3.5.2\lib\net40\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Chapter08\Recipe02.WebForms\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
-    <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Chapter08\Recipe02.WebForms\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -182,6 +187,7 @@
     <Compile Include="CollaborationSpaceMediaConfiguration.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
+    <Compile Include="CollaborationSpaceStatus.cs" />
     <Compile Include="EmailOptOut.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
@@ -233,6 +239,7 @@
     <Compile Include="MessageSpamConfiguration.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="MoBContext.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
@@ -247,6 +254,8 @@
     <Compile Include="OpenPositionConfiguration.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partial\Artist.cs" />
+    <Compile Include="Partial\CollaborationSpace.cs" />
     <Compile Include="PlayList.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
@@ -266,10 +275,11 @@
     <Compile Include="RefactorLogConfiguration.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repository\ArtistRepository.cs" />
     <Compile Include="Repository\CollaborationSpaceQueryOptions.cs" />
     <Compile Include="Repository\IWorkSpaceRepository.cs" />
     <Compile Include="Repository\QueryOptions.cs" />
-    <Compile Include="Repository\WorkSpaceRepository.cs" />
+    <Compile Include="Repository\CollaborationSpaceRepository.cs" />
     <Compile Include="Song.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
@@ -294,6 +304,7 @@
     <Compile Include="TaskConfiguration.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>
+    <Compile Include="Util\DebugDataSubstitute.cs" />
     <Compile Include="WebpagesMembership.cs">
       <DependentUpon>Mvc6Dal.tt</DependentUpon>
     </Compile>

@@ -41,7 +41,7 @@ namespace Mvc6Recipes.Shared.DataAccess
         public DateTime LastActivityDate { get; set; } // LastActivityDate
         public bool ShowChatStatus { get; set; } // ShowChatStatus
         public bool AllowChatSounds { get; set; } // AllowChatSounds
-
+        public virtual string Id { get; set; } 
         // Reverse navigation
         public virtual ArtistProfile ArtistProfile { get; set; } // ArtistProfile.FK_ArtistProfile_Artist
         public virtual ICollection<AlertSubscription> AlertSubscriptions { get; set; } // AlertSubscription.FK_AlertSubscription_Artist
@@ -92,6 +92,7 @@ namespace Mvc6Recipes.Shared.DataAccess
             PlayLists = new List<PlayList>();
             Tasks = new List<Task>();
             WebpagesRoles = new List<WebpagesRoles>();
+            Id = OldUserId.ToString();
             InitializePartial();
         }
         partial void InitializePartial();

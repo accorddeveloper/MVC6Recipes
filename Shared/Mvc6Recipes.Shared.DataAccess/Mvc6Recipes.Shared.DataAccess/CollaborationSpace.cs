@@ -17,23 +17,7 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Mvc6Recipes.Shared.DataAccess
 {
-    public enum ProjectStatus
-    {
-        Active,
-        Filled,
-        Mix,
-        Review,
-        Published,
-        OnHold,
-        Canceled
-    }
-
-    public enum ProjectCopyrightModel
-    {
-        Shared,
-        SoleOwnership,
-        Community
-    }
+    
 
     
     // CollaborationSpace
