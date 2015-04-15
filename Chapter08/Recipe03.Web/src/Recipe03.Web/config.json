@@ -1,12 +1,13 @@
 {
-    "Data": {
-        "DefaultConnection": { 
-            "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-Recipe03.Web-f7d43d18-9f8d-41f3-be31-647df14bc22e;Trusted_Connection=True;MultipleActiveResultSets=true"
-        }
-    },
-    "EntityFramework": {
-        "ApplicationDbContext": {
-            "ConnectionString": "Data:DefaultConnection:ConnectionString"
-        }
-    }
+	"Data": {
+		"DefaultConnection": {
+			"ConnectionString": "Server=.;Database=Mvc6RecipesSharedDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+		}
+	},
+	"EntityFramework": {
+		"MoBContext": {
+			"ConnectionString": "Name=Data:DefaultConnection:ConnectionString"
+		}
+	},
+	"CustomValue": "Red"
 }

@@ -3,16 +3,11 @@ using Microsoft.AspNet.Builder;
 using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Diagnostics.Entity;
 using Microsoft.AspNet.Hosting;
-using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Routing;
-using Microsoft.AspNet.Security.Cookies;
-using Microsoft.Data.Entity;
 using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
-using Recipe03.Web.Models;
+using Mvc6Recipes.Shared.DataAccess;
 
 namespace Recipe03.Web
 {
@@ -32,20 +27,16 @@ namespace Recipe03.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // Add EF services to the services container.
-            services.AddEntityFramework(Configuration)
-                .AddSqlServer()
-                .AddDbContext<ApplicationDbContext>();
+            //services.AddEntityFramework(Configuration)
+            //    .AddSqlServer()
+            //    .AddDbContext<MoBContext>();
 
-            // Add Identity services to the services container.
-            services.AddIdentity<ApplicationUser, IdentityRole>(Configuration)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+            //// Add Identity services to the services container.
+            //services.AddIdentity<ApplicationUser, IdentityRole>(Configuration)
+            //    .AddEntityFrameworkStores<MoBContext>();
 
             // Add MVC services to the services container.
             services.AddMvc();
-
-            // Uncomment the following line to add Web API servcies which makes it easier to port Web API 2 controllers.
-            // You need to add Microsoft.AspNet.Mvc.WebApiCompatShim package to project.json
-            // services.AddWebApiConventions();
 
         }
 

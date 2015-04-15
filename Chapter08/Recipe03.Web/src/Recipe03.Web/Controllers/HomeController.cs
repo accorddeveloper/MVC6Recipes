@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNet.Mvc;
+using Microsoft.Framework.ConfigurationModel;
 
 namespace Recipe03.Web.Controllers
 {
@@ -14,9 +15,11 @@ namespace Recipe03.Web.Controllers
 
         public IActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            var config =  new Configuration()
+                .AddJsonFile("config.json")
+                .AddEnvironmentVariables();
 
-            return View();
+            return View(config);
         }
 
         public IActionResult Contact()

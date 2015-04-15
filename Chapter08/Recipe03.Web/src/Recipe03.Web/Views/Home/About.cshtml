@@ -1,7 +1,21 @@
-﻿@{
+﻿@using Microsoft.Framework.ConfigurationModel
+@model Configuration
+@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@helper displayItem(IEnumerable<KeyValuePair<string,IConfiguration>> items, int level) {
+        @foreach (var item in items)
+        {
+            var builder = new TagBuilder("H" + level);
+            builder.SetInnerText(item.Key);
+            @builder.ToHtmlString(TagRenderMode.Normal)
+            @Model.Get(item.Key)
+            @item.Value.Get(item.Key)
+           
+            @displayItem(item.Value.GetSubKeys(), level + 1)
 
-<p>Use this area to provide additional information.</p>
+
+        }
+        }
+<h1>This is a dump of the configuration</h1>
+@displayItem(Model.GetSubKeys(),2)
