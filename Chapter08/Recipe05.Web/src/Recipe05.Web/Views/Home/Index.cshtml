@@ -1,0 +1,72 @@
+﻿@using Shared.Infrastructure.HtmlHelpers
+@model Recipe05.Web.Models.CollaborationSpaceSearchResultModel
+@{
+    ViewBag.Title = "ASP.NET MVC 6 Recipes Data Grid";
+}
+<h1>Data Grid Example</h1>
+<p>
+    This example shows how you could replace the GridView control when used as a read only list that supports filtering and
+    paging and sorting.
+</p>
+
+<h3>@Model.ResultsDescription</h3>
+<div class="row">
+    <div class="col-lg-2 col-md-2">
+        <h4>Refine By Genres</h4>
+        <ul class="list list-unstyled">
+            @foreach (var item in Model.GenreLookUpList)
+            {
+                <li>
+                    <a href="@Url.Action("Index", new { Genres = item.GenreLookUpId , Page = 1, SortExpression = Model.SortExpression })">
+                        @if (Model.GenreLookUpId == item.GenreLookUpId)
+                        {
+                            <span class="glyphicon glyphicon-check"></span>
+                        }
+                        else
+                        {
+                            <span class="glyphicon glyphicon-unchecked"></span>
+                        }
+                        @item.GenreName
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="col-lg-10 col-md-10">
+        <table class="table table-striped">
+            <tr>
+                <th>@Html.ActionLink("Collaboration Space", "Index", new { GenreLookUpId = Model.GenreLookUpId, Page = 1, SortExpression = "Title" })</th>
+                <th>@Html.ActionLink("Artist", "Index", new { Genres = Model.GenreLookUpId, Page = 1, SortExpression = "UserName" })</th>
+                <th>@Html.ActionLink("Created", "Index", new { Genres = Model.GenreLookUpId, Page = 1, SortExpression = "CreateDate" })</th>
+                <th>@Html.ActionLink("Modified", "Index", new { Genres = Model.GenreLookUpId, Page = 1, SortExpression = "ModifiedDate" })</th>
+                <th>@Html.ActionLink("Stats", "Index", new { Genres = Model.GenreLookUpId, Page = 1, SortExpression = "NumberViews" })</th>
+            </tr>
+            @foreach (var item in Model.CollaborationSpaceSearchResults)
+            {
+                <tr>
+                    <td>@item.Title</td>
+                    <td>@item.UserName</td>
+                    <td>@item.CreateDate.ToShortDateString()</td>
+                    <td>@item.ModifiedDate.ToShortDateString()</td>
+                    <td>
+                        <ul class="ItemList">
+                            <li>
+                                Hits: @item.NumberViews
+                            </li>
+                            <li>
+                                Posts: @item.NumberComments
+                            </li>
+                            <li>
+                                Status: @item.Status
+                            </li>
+                        </ul>
+
+                    </td>
+                </tr>
+            }
+        </table>
+        <nav>
+            @Html.CreateNumericPager(Model.NumberOfResults, Model.ItemsPerPage, Model.CurrentPage)
+        </nav>
+    </div>
+</div>

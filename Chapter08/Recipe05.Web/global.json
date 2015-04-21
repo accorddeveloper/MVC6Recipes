@@ -1,0 +1,6 @@
+{
+    "sources": [ "src", "test", "../../Shared/Mvc6Recipes.Shared.DataAccessEF7/src", "../Shared.Infrastructure/src" ],
+    "sdk": {
+        "version": "1.0.0-beta3"
+    }
+}
