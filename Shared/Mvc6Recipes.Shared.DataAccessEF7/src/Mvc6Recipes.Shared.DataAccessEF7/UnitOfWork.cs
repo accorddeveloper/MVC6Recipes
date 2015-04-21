@@ -9,6 +9,19 @@ namespace Mvc6Recipes.Shared.DataAccess
         private Repository<Band> _BandRepository;
         private CollaborationSpaceRepository _CollaborationSpaceRepository;
         private Repository<GenreLookUp> _GenreLookUpRepository;
+        private Repository<ArtistSkill> _ArtistSkillRepository;
+
+        public Repository<ArtistSkill> ArtistSkillRepository
+        {
+            get
+            {
+                if (_ArtistSkillRepository == null)
+                {
+                    _ArtistSkillRepository = new Repository<ArtistSkill>(_context);
+                }
+                return _ArtistSkillRepository;
+            }
+        }
 
         public Repository<GenreLookUp> GenreLookUpRepository
         {

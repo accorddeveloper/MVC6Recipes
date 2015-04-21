@@ -9,6 +9,8 @@ namespace Mvc6Recipes.Shared.DataAccess
         Repository<Band> BandRepository { get; }
 
         Repository<GenreLookUp> GenreLookUpRepository { get; }
+
+        Repository<ArtistSkill> ArtistSkillRepository { get; }
         void Save();
 
     }

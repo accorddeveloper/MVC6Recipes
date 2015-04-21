@@ -89,10 +89,13 @@ namespace Mvc6Recipes.Shared.DataAccess
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //modelBuilder.Entity<Department>().Ignore(t => t.Budget);
+            // also has a property called Id, EF can't figure out which one to use
             builder.Entity<Artist>().Key(a => a.ArtistId);
             builder.Entity<Artist>().Ignore(a => a.Id);
             builder.Entity<Artist>().Ignore(a => a.AvatarUrlSample);
+
+            // does not match the convention so need to add custom key
+            builder.Entity<ArtistSkill>().Key(a => a.ArtistTalentId);
             base.OnModelCreating(builder);
         }
 

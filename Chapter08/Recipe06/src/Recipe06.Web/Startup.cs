@@ -10,7 +10,7 @@ using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
-
+using Mvc6Recipes.Shared.DataAccess;
 
 namespace Recipe06.Web
 {
@@ -31,6 +31,8 @@ namespace Recipe06.Web
         {
             // Add MVC services to the services container.
             services.AddMvc();
+            var d = new ServiceDescriptor(typeof(IUnitOfWork), new UnitOfWork());
+            services.Add(d);
 
         }
 

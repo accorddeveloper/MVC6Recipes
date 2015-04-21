@@ -37,3 +37,14 @@ textarea {
         z-index: 10 !important;
     }
 }
+.table td textarea {
+        width:98%;
+        border-width:2px;
+        height: 3em;
+        border-color:lightblue;
+    }
+.table td input[type="text"], .grid td input[type="number"] {
+            border: 2px solid lightblue;
+            width: 98%;
+            height: 2em;
+}
