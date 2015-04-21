@@ -35,6 +35,8 @@ namespace Recipe03.Web
             //services.AddIdentity<ApplicationUser, IdentityRole>(Configuration)
             //    .AddEntityFrameworkStores<MoBContext>();
 
+            var d = new ServiceDescriptor(typeof(IUnitOfWork), new UnitOfWork());
+            services.Add(d);
             // Add MVC services to the services container.
             services.AddMvc();
 

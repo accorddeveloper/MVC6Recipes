@@ -4,9 +4,10 @@ using Mvc6Recipes.Shared.DataAccess;
 
 namespace Recipe03.Web.Controllers
 {
+    //[Authorize(Roles ="Members")]
     public class MembersController : Controller
     {
-        private UnitOfWork unitOfWork = new UnitOfWork();
+        private UnitOfWork unitOfWork= null;
         // GET: /<controller>/
         public IActionResult Index()
         {
@@ -15,6 +16,7 @@ namespace Recipe03.Web.Controllers
 
         public IActionResult MyCollaborationSpaces()
         {
+            unitOfWork = new UnitOfWork();
             var id = 1784;
             var model = unitOfWork.CollaborationSpaceRepository.GetCollaborationSpacesForArtist(id);
 
@@ -24,7 +26,11 @@ namespace Recipe03.Web.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            unitOfWork.Dispose();
+            if (unitOfWork != null)
+            {
+                unitOfWork.Dispose();
+            }
+            
             base.Dispose(disposing);
         }
     }

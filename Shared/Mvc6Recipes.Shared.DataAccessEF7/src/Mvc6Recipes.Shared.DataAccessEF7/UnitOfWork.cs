@@ -2,19 +2,33 @@
 
 namespace Mvc6Recipes.Shared.DataAccess
 {
-    public class UnitOfWork : IDisposable
+    public class UnitOfWork : IUnitOfWork
     {
         private MoBContext _context = new MoBContext();
-        private Repository<Artist> _ArtistRepository;
+        private ArtistRepository _ArtistRepository;
+        private Repository<Band> _BandRepository;
         private CollaborationSpaceRepository _CollaborationSpaceRepository;
+        private Repository<GenreLookUp> _GenreLookUpRepository;
 
-        public Repository<Artist> ArtistRepository
+        public Repository<GenreLookUp> GenreLookUpRepository
+        {
+            get
+            {
+                if (_GenreLookUpRepository == null)
+                {
+                    _GenreLookUpRepository = new Repository<GenreLookUp>(_context);
+                }
+                return _GenreLookUpRepository;
+            }
+        }
+
+        public ArtistRepository ArtistRepository
         {
             get
             {
                 if (_ArtistRepository == null)
                 {
-                    _ArtistRepository = new Repository<Artist>(_context);
+                    _ArtistRepository = new ArtistRepository(_context);
                 }
                 return _ArtistRepository;
             }
@@ -32,7 +46,17 @@ namespace Mvc6Recipes.Shared.DataAccess
             }
         }
 
-
+        public Repository<Band> BandRepository
+        {
+            get
+            {
+                if (_BandRepository == null)
+                {
+                    _BandRepository = new Repository<Band>(_context);
+                }
+                return _BandRepository;
+            }
+        }
 
 
         public void Save()

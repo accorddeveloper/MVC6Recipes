@@ -1,0 +1,11 @@
+﻿@using Shared.Infrastructure.HtmlHelpers
+@{
+    ViewBag.Title = "DataList Replacement";
+}
+@model List<Mvc6Recipes.Shared.DataAccess.Artist>
+@{
+    ViewBag.Title = "DataList Replacement";
+}
+
+<h2>DataList Control Replacement using a custom HTML Helper</h2>
+@Html.RenderTemplateAsColumns(Model, "_ArtistPartial", 3)

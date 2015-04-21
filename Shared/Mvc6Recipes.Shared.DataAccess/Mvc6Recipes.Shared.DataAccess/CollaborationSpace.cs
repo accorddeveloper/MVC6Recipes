@@ -17,9 +17,6 @@ using System.Data.Entity.ModelConfiguration;
 
 namespace Mvc6Recipes.Shared.DataAccess
 {
-    
-
-    
     // CollaborationSpace
     public partial class CollaborationSpace
     {
@@ -29,7 +26,7 @@ namespace Mvc6Recipes.Shared.DataAccess
         public bool RestrictContributorsToBand { get; set; } // RestrictContributorsToBand
         public int? BandId { get; set; } // BandId
         public bool AllowPublicView { get; set; } // AllowPublicView
-        public ProjectCopyrightModel CopyrightModel { get; set; } // CopyrightModel
+        public byte CopyrightModel { get; set; } // CopyrightModel
         public bool AllowContributorsToPublish { get; set; } // AllowContributorsToPublish
         public DateTime CreateDate { get; set; } // CreateDate
         public DateTime ModifiedDate { get; set; } // ModifiedDate
@@ -37,7 +34,7 @@ namespace Mvc6Recipes.Shared.DataAccess
         public DateTime? PublishedDate { get; set; } // PublishedDate
         public int NumberViews { get; set; } // NumberViews
         public int NumberComments { get; set; } // NumberComments
-        public ProjectStatus Status { get; set; } // Status
+        public byte Status { get; set; } // Status
         public int? ConceptId { get; set; } // ConceptId
         public string ConceptMediaType { get; set; } // ConceptMediaType
 

@@ -5,7 +5,7 @@
 // 
 // The following connection settings were used to generate this file
 // 
-//     Configuration file:     "Mvc6Recipes.Shared.DataAccess\App.config"
+//     Configuration file:     "C:\MVC6Recipes\MVC6Recipes\Shared\Mvc6Recipes.Shared.DataAccess\Mvc6Recipes.Shared.DataAccess\App.config"
 //     Connection String Name: "MoBContextConnString"
 //     Connection String:      "Data Source=.;Initial Catalog=Mvc6RecipesSharedDb;Integrated Security=True;multipleactiveresultsets=true"
 

@@ -1,0 +1,21 @@
+﻿@model Mvc6Recipes.Shared.DataAccess.Artist
+
+<a href="/@Model.UserName">
+    <div class="media padded">
+        <div class="media-left">
+            <img src="@Model.AvatarUrlSample" class="media-object box120x" alt="Click Image to view full profile" />
+        </div>
+        <div class="media-right">
+            <ul class="list-unstyled">
+                <li class="ProfileLink">@Model.UserName</li>
+                <li>@Model.Province</li>
+                <li>@Model.Country</li>
+                <li>
+                    Joined :
+                    <time>@String.Format("{0:d}", Model.CreateDate)</time>
+                </li>
+            </ul>
+        </div>
+    </div>
+</a>
+

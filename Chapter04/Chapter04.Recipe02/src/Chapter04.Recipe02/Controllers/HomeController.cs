@@ -14,9 +14,10 @@ namespace Chapter04.Recipe02.Controllers
 
         public IActionResult AnchorExamples()
         {
-            ViewBag.Message = "Your application description page.";
+            var model = new Models.LinkViewModel();
+            model.MyUrl = "http://myonlineband.com";
 
-            return View();
+            return View(model);
         }
 
         public IActionResult Contact()

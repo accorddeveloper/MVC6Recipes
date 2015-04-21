@@ -27,7 +27,7 @@ namespace Mvc6Recipes.Shared.DataAccess
         /// </summary>
         /// <param name="filter">Lambda expression for filtering rows</param>
         /// <param name="orderBy">Lambda expression for sorting</param>
-        /// <param name="includeProperties">Comma separated list of entities that should be eager loaded</param>
+        /// <param name="includeProperties">Add an argument for each property that should be eager loaded</param>
         /// <param name="page">When pageSize is greater then 0 then will return a particular data page</param>
         /// <param name="pageSize">Number of items per page. 0 will return all data without pages</param>
         /// <returns>An IEnumerable of the type or null if no data is found</returns>
