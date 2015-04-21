@@ -7,6 +7,9 @@ _ReSharper.*/
 packages/
 artifacts/
 PublishProfiles/
+bower_components/
+nodes_modules/
+wwwroot/lib/
 *.user
 *.suo
 *.cache
