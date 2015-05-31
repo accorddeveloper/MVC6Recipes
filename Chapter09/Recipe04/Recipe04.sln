@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22823.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{FA83BE72-8E28-425F-8DBB-6120201D56A4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{2FDFBDB3-B57D-497C-9F1A-236F585435E3}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Recipe04.Web", "src\Recipe04.Web\Recipe04.Web.xproj", "{D49ABA8D-1BD8-4012-BE04-1E8DA47DF3CF}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc6Recipes.Shared.DataAccess", "..\..\Shared\Mvc6Recipes.Shared.DataAccessEf7v2\src\Mvc6Recipes.Shared.DataAccess\Mvc6Recipes.Shared.DataAccess.xproj", "{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc6Recipes.Shared.Infrastructure", "..\..\Shared\Mvc6Recipes.Shared.Infrastructure\src\Mvc6Recipes.Shared.Infrastructure\Mvc6Recipes.Shared.Infrastructure.xproj", "{C8ABEB53-D481-4470-AEE5-155F88092206}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D49ABA8D-1BD8-4012-BE04-1E8DA47DF3CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D49ABA8D-1BD8-4012-BE04-1E8DA47DF3CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D49ABA8D-1BD8-4012-BE04-1E8DA47DF3CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D49ABA8D-1BD8-4012-BE04-1E8DA47DF3CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8ABEB53-D481-4470-AEE5-155F88092206}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8ABEB53-D481-4470-AEE5-155F88092206}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8ABEB53-D481-4470-AEE5-155F88092206}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8ABEB53-D481-4470-AEE5-155F88092206}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D49ABA8D-1BD8-4012-BE04-1E8DA47DF3CF} = {FA83BE72-8E28-425F-8DBB-6120201D56A4}
+	EndGlobalSection
+EndGlobal

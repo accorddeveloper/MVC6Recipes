@@ -1,0 +1,15 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net46": {
+      "wrappedProject": "../../Recipe05.Dal/Recipe05.Dal.csproj",
+      "bin": {
+        "assembly": "../../Recipe05.Dal/obj/{configuration}/Recipe05.Dal.dll",
+        "pdb": "../../Recipe05.Dal/obj/{configuration}/Recipe05.Dal.pdb"
+      },
+      "dependencies": {
+        "EntityFramework": "6.1.3"
+      }
+    }
+  }
+}

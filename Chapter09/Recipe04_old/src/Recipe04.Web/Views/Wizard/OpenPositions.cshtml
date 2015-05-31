@@ -1,0 +1,15 @@
+﻿@model Recipe04.Web.Models.WizardModel
+@{
+    ViewBag.Title = "Open Positions";
+    Layout = "~/Views/Shared/_WizardLayout.cshtml";
+}
+
+@Html.HiddenFor(a => a.NewWorkspace.AllowContributorsToPublish)
+@Html.HiddenFor(a => a.NewWorkspace.AllowPublicView)
+@Html.HiddenFor(a => a.NewWorkspace.RestrictContributorsToBand)
+@Html.HiddenFor(a => a.NewWorkspace.Description)
+@Html.HiddenFor(a => a.NewWorkspace.Title)
+<h2>Open Positions</h2>
+<div class="CheckBoxGroup">
+    @Html.EditorFor(a => a.NeededSkills)
+</div>

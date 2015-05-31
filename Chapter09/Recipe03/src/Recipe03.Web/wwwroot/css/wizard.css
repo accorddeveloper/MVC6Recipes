@@ -1,0 +1,7 @@
+﻿.checkbox-list input[type="checkbox"]{
+    display:inline;
+}
+
+.checkbox-list label{
+    display:inline;
+}

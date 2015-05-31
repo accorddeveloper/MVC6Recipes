@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0-*",
+  "frameworks": {
+    "net451": {
+      "bin": {
+        "assembly": "../../Mvc6Recipes.Shared.DataAccess/bin/Debug/EntityFramework.SqlServer.dll"
+      },
+      "dependencies": {
+        "EntityFramework": "1.0.0-*"
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+﻿@using Shared.Infrastructure.HtmlHelpers
+@model Recipe04.Web.Models.WizardBase
+    @{
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+<h1>Multiple Page Form</h1>
+@using (Html.BeginForm())
+{
+    @Html.HiddenFor(a => a.ShowWizardSteps);
+    @Html.HiddenFor(a => a.CurrentStepIndex);
+    @Html.ValidationSummary(true)
+    <div class="row">
+        @if (Model.ShowWizardSteps)
+        {
+            <nav class="col-lg-3 col-md-3">
+                <div class="btn-group-vertical" role="group">
+                    @foreach (var step in Model.WizardSteps)
+                    {
+                        if (!step.HideOnSideNavigation)
+                        {
+
+                                @Html.WizardSideButton(step.Title, step.Action, step.Controller)
+
+                        }
+                    }
+                    </div>
+            </nav>
+        }
+        <section class="col-lg-9 col-md-9">
+            @RenderBody()
+
+            <section class="WizardButtons">
+                @if (Model.ShowBackButton)
+                { @Html.WizardBackButton(Model.LastWizardStep.Action, Model.LastWizardStep.Controller);
+                }
+                @if (Model.ShowNextButton)
+                { @Html.WizardNextButton(Model.NextWizardStep.Action, Model.NextWizardStep.Controller);
+                }
+                @if (Model.AllowFinish)
+                { @Html.WizardFinishButton(Model.FinishAction.Action, Model.FinishAction.Controller);
+                }
+
+            </section>
+        </section>
+    </div>
+
+}
+
+@section Scripts {
+<script src="/Scripts/MVCWizard.js"></script>
+}
+
+

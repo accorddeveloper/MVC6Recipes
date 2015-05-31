@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.22609.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{70746661-91CD-43FA-B162-90FCCB90533A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{10F6D6F0-B336-43C0-A7B4-11851500DD58}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Recipe01.Web", "src\Recipe01.Web\Recipe01.Web.kproj", "{202C44F6-0820-413E-A9B2-E7539E6B60E8}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc6Recipes.Shared.DataAccessEF7", "..\..\Shared\Mvc6Recipes.Shared.DataAccessEF7\src\Mvc6Recipes.Shared.DataAccessEF7\Mvc6Recipes.Shared.DataAccessEF7.kproj", "{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{202C44F6-0820-413E-A9B2-E7539E6B60E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{202C44F6-0820-413E-A9B2-E7539E6B60E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{202C44F6-0820-413E-A9B2-E7539E6B60E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{202C44F6-0820-413E-A9B2-E7539E6B60E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{202C44F6-0820-413E-A9B2-E7539E6B60E8} = {70746661-91CD-43FA-B162-90FCCB90533A}
+	EndGlobalSection
+EndGlobal

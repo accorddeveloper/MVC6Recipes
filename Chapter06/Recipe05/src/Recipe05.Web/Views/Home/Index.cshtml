@@ -1,0 +1,12 @@
+﻿@model List<Recipe05.Dal.Artist>
+@{
+    ViewBag.Title = "Home Page";
+}
+<h1>Welcome to the Sharkboy Talent Agency</h1>
+<p class="lead">The following is a list of artists that we support.</p>
+<ul>
+    @foreach (var item in Model)
+    {
+        <li>@item.UserName</li>
+    }
+</ul>

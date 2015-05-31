@@ -1,7 +1,0 @@
-﻿{
-    "Data": {
-        "DefaultConnection": { 
-            "ConnectionString": "Server=.;Database=Chapter5Recipe6;Trusted_Connection=True;MultipleActiveResultSets=True"
-        }
-    }
-}

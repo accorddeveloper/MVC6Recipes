@@ -1,0 +1,12 @@
+﻿@model Recipe04.Web.Models.WizardModel
+@{
+    ViewBag.Title = "Alert Settings";
+    Layout = "~/Views/Shared/_WizardLayout.cshtml";
+}
+<h2>Alert Settings</h2>
+<div class="checkbox">
+    <label>
+        @Html.EditorFor(a => a.RegisterForAlerts)
+        @Html.DisplayNameFor(a => a.RegisterForAlerts)
+    </label>
+</div>

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.22609.0
+VisualStudioVersion = 14.0.22823.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{962497F9-EB89-4EEB-97CB-61A6583807B1}"
 EndProject
@@ -10,11 +10,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Recipe05.Web", "src\Recipe05.Web\Recipe05.Web.kproj", "{5CE5CA4D-6CFF-4885-97F3-642A00FB895C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Recipe05.Web", "src\Recipe05.Web\Recipe05.Web.xproj", "{5CE5CA4D-6CFF-4885-97F3-642A00FB895C}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shared.Infrastructure.HtmlHelpers", "..\Shared.Infrastructure\src\Shared.Infrastructure.HtmlHelpers\Shared.Infrastructure.HtmlHelpers.kproj", "{F1309C4E-DD4A-4A96-9021-7BB9C70B774D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shared.Infrastructure.HtmlHelpers", "..\Shared.Infrastructure\src\Shared.Infrastructure.HtmlHelpers\Shared.Infrastructure.HtmlHelpers.xproj", "{F1309C4E-DD4A-4A96-9021-7BB9C70B774D}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc6Recipes.Shared.DataAccessEF7", "..\..\Shared\Mvc6Recipes.Shared.DataAccessEF7\src\Mvc6Recipes.Shared.DataAccessEF7\Mvc6Recipes.Shared.DataAccessEF7.kproj", "{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Mvc6Recipes.Shared.DataAccess", "..\..\Shared\Mvc6Recipes.Shared.DataAccessEf7v2\src\Mvc6Recipes.Shared.DataAccess\Mvc6Recipes.Shared.DataAccess.xproj", "{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +30,10 @@ Global
 		{F1309C4E-DD4A-4A96-9021-7BB9C70B774D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F1309C4E-DD4A-4A96-9021-7BB9C70B774D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F1309C4E-DD4A-4A96-9021-7BB9C70B774D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{04DCB69A-4413-44E0-80EB-691B4BF9FF8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36CD3286-2475-43B6-A0B7-EF662EFBC5AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "TalentAgencyContainer": "metadata=res://*/TalentAgency.csdl|res://*/TalentAgency.ssdl|res://*/TalentAgency.msl;provider=System.Data.SqlClient;provider connection string='data source=.;initial catalog=Chapter06Recipe05;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework'"
+  } 
+}

@@ -1,0 +1,146 @@
+﻿@model Recipe02.Web.Models.JavaScriptWizardModel
+
+@{
+    ViewBag.Title = "One Page Wizard";
+}
+@section headContent{
+    <link rel="stylesheet" href="~/css/wizard.css" />
+}
+<h1>New Collaboration Space Wizard (JavaScript Edition)</h1>
+@if (!ViewData.ModelState.IsValid)
+{
+    @ViewBag.ErrorMessage
+}
+<div class="row">
+    <nav class="col-lg-3 col-md-3">
+        <div class="btn-group-vertical" role="group">
+            <button class="btn btn-primary" id="WizardStep_0" data-wizardstep="0">Title &amp; Description</button>
+            <button  class="btn btn-default" id="WizardStep_1" data-wizardstep="1">Collaboration Settings</button>
+            <button  class="btn btn-default" id="WizardStep_2" data-wizardstep="2">Open Positions</button>
+            <button  class="btn btn-default" id="WizardStep_3" data-wizardstep="3">Alert Settings</button>
+        </div>
+    </nav>
+    <section class="col-lg-9 col-md-9">
+        @using (Html.BeginForm("Wizard",
+                                       "OnePageWizard",
+                                       FormMethod.Post,
+                                       new { id = "WizardForm0" }))
+        {
+
+            <div id="WizardStep_Div_0" class="panel panel-default hidden">
+                <div class="panel-heading">Title And Description</div>
+                <div class="panel-body">
+                    <fieldset>
+                        <legend>Describe your project</legend>
+                        <div>
+                            @Html.LabelFor(a => a.NewWorkspace.Title)
+                            <br />
+                            @Html.TextBoxFor(a => a.NewWorkspace.Title, new { @class = "form-control" })
+                        </div>
+                        <div>
+                            @Html.LabelFor(a => a.NewWorkspace.Description)
+                            <br />
+                            @Html.TextAreaFor(a => a.NewWorkspace.Description, new { @class = "form-control" })
+                        </div>
+                    </fieldset>
+                </div>
+
+                </div>
+
+            <div id="WizardStep_Div_1" class="panel panel-default hidden">
+                <div class="panel-heading">Collaboration Setting</div>
+                <div class="panel-body">
+                    <fieldset>
+                        <legend>
+                            Describe the collaboration rules for your project
+                        </legend>
+
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(a =>
+                          a.NewWorkspace.AllowContributorsToPublish)
+                                @Html.DisplayNameFor(a =>
+                          a.NewWorkspace.AllowContributorsToPublish)
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(a => a.NewWorkspace.AllowPublicView)
+                                @Html.DisplayNameFor(a => a.NewWorkspace.AllowPublicView)
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label>
+                                @Html.CheckBoxFor(a =>
+                        a.NewWorkspace.RestrictContributorsToBand)
+                                @Html.DisplayNameFor(a =>
+                        a.NewWorkspace.RestrictContributorsToBand)
+                            </label>
+                        </div>
+                    </fieldset>
+                    </div>
+                </div>
+
+            <div id="WizardStep_Div_2" class="panel panel-default hidden">
+                <div class="panel-heading">Open Positions</div>
+                <div class="panel-body">
+                    <fieldset>
+                        <legend>
+                            Describe the skills needed for your project
+                        </legend>
+                        <div class="checkbox-group">
+                            @Html.EditorFor(a => a.NeededSkills)
+                        </div>
+                        <div>
+                            @Html.LabelFor(a => a.OpenPositionDescription)
+                            <br />
+                            @Html.TextAreaFor(a => a.OpenPositionDescription, new { @class = "form-control", rows=3 })
+
+                        </div>
+                        <div>
+                            @Html.LabelFor(a => a.OpenPostionSkillLevel)
+                            <br />
+                            @Html.TextBoxFor(a => a.OpenPostionSkillLevel, new { @class = "form-control" })
+                        </div>
+                    </fieldset>
+                    </div>
+                </div>
+            <div id="WizardStep_Div_3" class="panel panel-default hidden">
+                <div class="panel-heading">Alert Settings</div>
+                <div class="panel-body">
+                    <fieldset>
+                        <legend>
+                            Subscribe to be notified when your collaboration space is updated
+                        </legend>
+                        <div class="checkbox">
+                            <label>
+                                @Html.EditorFor(a => a.RegisterForAlerts)
+                                @Html.DisplayNameFor(a => a.RegisterForAlerts)
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+                </div>
+            <section class="btn-group">
+                <button  id="BackButton" class="btn btn-default" type="button" ><span class="glyphicon glyphicon-arrow-left"></span> Back</button>
+                <button  id="NextButton" class="btn btn-default" type="button"><span class="glyphicon glyphicon-arrow-right"></span> Next</button>
+                <button  id="FinishButton" class="btn btn-primary" type="submit" ><span class="glyphicon glyphicon-save"></span> Save</button>
+            </section>
+
+        }
+
+    </section>
+
+</div>
+@section scripts{ 
+<script src="/lib/jquery-validation/jquery.validate.js"></script>
+<script src="/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+<script src="/lib/jquery-ui/jquery-ui.js"></script>
+<script src="/script/jswizard.js"></script>
+    <script>
+        (function () {
+            "option strict";
+            jswizard.init({ numberOfSteps : 4});
+        })();
+    </script>
+}

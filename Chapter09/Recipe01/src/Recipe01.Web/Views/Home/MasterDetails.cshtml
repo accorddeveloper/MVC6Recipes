@@ -1,0 +1,65 @@
+﻿@using Recipe01.Web.Models
+@model GenericMasterDetailsModel<Mvc6Recipes.Shared.DataAccess.Artist>
+@{
+    ViewBag.Title = "Master Details View";
+}
+<h2>@ViewBag.Title</h2>
+<div class="row">
+    <section id="ArtistMasterList" class="col-lg-6 col-md-6">
+        <h2>Artist List</h2>
+        <table class="table table-striped">
+            @foreach (var item in Model.ItemList)
+            {
+                <tr>
+                    <td>
+                        <div class="row">
+                            <div class="col-lg-5 col-md-5">
+                                <img src="@item.AvatarUrlSample" 
+                                     class="AristImage" 
+                                     alt="Click Image to view full profile" />
+                            </div>
+                            <div class="col-lg-7 col-md-7">
+                                <ul class="list-unstyled">
+                                    <li class="ProfileLink">@item.UserName</li>
+                                    <li>@item.Province</li>
+                                    <li>@item.Country</li>
+                                    <li>
+                                        Joined :
+                                        <time>@String.Format("{0:d}", item.CreateDate)</time>
+                                    </li>
+                                    <li>@Html.ActionLink("View Details", "MasterDetails", 
+                                       new { SelectedItemId = item.ArtistId })</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </section>
+    <section id="ArtistDetails" class="col-lg-6 col-md-6">
+        @if (Model.SelectedId > 0)
+        {
+                <h2>Selected Artist</h2>
+                <div class="well well-lg">
+                    <h3>@Html.DisplayFor(model => model.SelectedItem.UserName)</h3>
+                    <dl>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.LastActivityDate)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.LastActivityDate)</dd>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.City)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.City)</dd>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.Province)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.Province)</dd>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.Country)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.Country)</dd>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.CreateDate)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.CreateDate)</dd>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.EmailAddress)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.EmailAddress)</dd>
+                        <dt>@Html.DisplayNameFor(model => model.SelectedItem.FileUploadsInBytes)</dt>
+                        <dd>@Html.DisplayFor(model => model.SelectedItem.FileUploadsInBytes)</dd>
+                    </dl>
+                </div>
+        }
+    </section>
+</div>

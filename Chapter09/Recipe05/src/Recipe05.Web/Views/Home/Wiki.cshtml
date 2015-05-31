@@ -1,0 +1,31 @@
+﻿@model Recipe05.Web.Model.WikiModel
+
+<h1>Create a Wiki Article</h1>
+<form asp-controller="Home" asp-action="Wiki" method="post" asp-anti-forgery="true"> 
+    <div>
+        <div asp-validation-summary="ValidationSummary.ModelOnly">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body"></label>
+                <textarea asp-for="Body" ></textarea>
+                <span asp-validation-for="Body"></span>
+            </div>
+
+            <div>
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+
+@section scripts{
+    
+<script src="/lib/ckeditor/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('Body', {baseHref: '\lib\ckeditor'});
+    </script>
+}
