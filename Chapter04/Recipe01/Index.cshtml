@@ -1,0 +1,33 @@
+﻿@model Recipe03.Web.Models.Contact
+@{
+    ViewBag.Title = "Home Page";
+}
+<h2>Chapter 04 Recipe 03</h2>
+<p>
+    This page shows two examples of Tag Helpers and the equivalent HTML Helper.
+</p>
+<h3>Link Created Using HTML Helper</h3>
+@Html.ActionLink("Go to home page", "Index", "Home", null, new { @class = "h4" })
+<br />
+<h3>Link Created using Tag Helper</h3>
+<!-- Tag Helper creates a link to the Index action on the home controller -->
+<a asp-controller="Home" asp-action="Index" class="h4">Go to home page</a>
+<hr />
+<h3>Form Created using HTML Helpers</h3>
+@using (Html.BeginForm("Index", "Home"))
+{
+    @Html.AntiForgeryToken()
+    @Html.LabelFor(model => model.Name)
+    @Html.TextBoxFor(model => model.Name, 
+    new { placeholder = "Enter your Name", @class = "form-control" })
+}
+<hr />
+
+<h3>Form Created using Tag Helpers</h3>
+<form asp-action="Index" asp-controller="Home" asp-anti-forgery="true">
+    <label asp-for="Name"></label>
+    <input asp-for="Name" class="form-control" placeholder="Enter your name" />
+</form>
+
+
+     

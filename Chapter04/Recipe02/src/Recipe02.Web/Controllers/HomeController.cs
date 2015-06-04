@@ -27,6 +27,18 @@ namespace Recipe02.Web.Controllers
             return View();
         }
 
+        public IActionResult Secure()
+        {
+            ViewBag.Message = "Your contact page.";
+
+            return View();
+        }
+
+        public IActionResult Profile()
+        {
+            return View();
+        }
+
         public IActionResult Error()
         {
             return View("~/Views/Shared/Error.cshtml");

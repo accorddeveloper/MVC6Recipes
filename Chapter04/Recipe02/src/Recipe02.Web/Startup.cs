@@ -71,6 +71,11 @@ namespace Recipe02.Web
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
 
+                routes.MapRoute(
+                    name: "defaultWithArea",
+                    template: "{controller}/{action}/{area}/{id?}",
+                    defaults: new { controller = "Home", action = "Index" });
+
                 // Uncomment the following line to add a route for porting Web API 2 controllers.
                 // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
             });
