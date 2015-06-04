@@ -1,0 +1,11 @@
+﻿@model Recipe03.Web.Models.Contact
+ <h2>Thanks @Model.Name , for submitting your contact details.</h2>
+
+@section Scripts{
+    <script>
+        (function () {
+            var color = "@Model.FavoriteColor";
+            $("body").css("background-color", color);
+        })();
+    </script>
+}
