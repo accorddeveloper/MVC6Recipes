@@ -1,0 +1,27 @@
+﻿@model Recipe04.Web.Models.Tristate
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1>ASP.NET MVC 6 Recipes</h1>
+@if (!@Model.NullableBoolValue.HasValue)
+{
+    <div class="alert alert-warning">NullableBoolValue = No Value</div>
+}
+else
+{
+    <div class="alert alert-info">
+        NullableBoolValue = @Model.NullableBoolValue.Value
+    </div>
+}
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="NullableBoolValue"></label>
+        <select asp-for="NullableBoolValue" class="form-control">
+            <option value="">None Selected</option>
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+    </div>
+    <input type="submit" name="save" value="Save" class="btn btn-default" />
+</form>
