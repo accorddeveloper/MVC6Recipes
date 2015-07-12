@@ -1,0 +1,16 @@
+﻿@model Recipe07.Web.Models.FormWithCacheModel
+<h1>ASP.NET MVC 6 Recipes</h1>
+Selected Value : @Model.MyListIsCached
+<form asp-action="Index" method="post">
+    <div class="form-group">
+        <label asp-for="MyListIsCached">
+        </label>
+        <select asp-for="MyListIsCached" class="form-control">
+            <cache>
+                <!--This section is cached-->
+                @Component.Invoke("LookupList")
+            </cache>
+        </select>
+    </div>
+    <input type="submit" value="Save" class="btn btn-primary" />
+</form>
