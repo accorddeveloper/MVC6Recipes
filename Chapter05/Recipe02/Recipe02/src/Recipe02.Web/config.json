@@ -1,0 +1,10 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Recipe02.Web"
+  },
+  "Data": {
+    "DefaultConnection": {
+      "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=aspnet5-Recipe02.Web-07e3242f-280e-474a-981d-9058b6797f3d;Trusted_Connection=True;MultipleActiveResultSets=true"
+    }
+  }
+}
