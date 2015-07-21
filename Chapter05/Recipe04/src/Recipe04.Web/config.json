@@ -1,0 +1,16 @@
+{
+  
+  "Data": {
+		"DefaultConnection": {
+			"ConnectionString": "Server=.;Database=Mvc6RecipesSharedDb;Trusted_Connection=True;MultipleActiveResultSets=true"
+		}
+	},
+	"EntityFramework": {
+		"MoBContext": {
+			"ConnectionString": "Name=Data:DefaultConnection:ConnectionString"
+		}
+	},
+  "AppSettings": {
+    "SiteTitle": "Recipe04.Web"
+  }
+}
