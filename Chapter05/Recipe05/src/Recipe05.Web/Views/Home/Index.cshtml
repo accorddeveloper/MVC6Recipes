@@ -1,7 +1,7 @@
-﻿@inject Recipe05.Web.Services.HitCounterService HitCounter
+﻿@inject Recipe05.Web.Services.IHitCounterService HitCounter
 @{
     ViewBag.Title = "Home Page";
 }
 
 <h1>Welcome</h1>
-Your are the @HitCounter.UpdateCount()
+Your are the @HitCounter.UpdateCount() person to view this page.

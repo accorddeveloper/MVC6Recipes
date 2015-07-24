@@ -1,30 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using System.IO;
-using Microsoft.Framework.ConfigurationModel;
+﻿using System.IO;
+
 
 namespace Recipe05.Web.Services
 {
-    public class HitCounterService
+    public class HitCounterService : IHitCounterService
     {
+        private string _rootPath;
+
+        public HitCounterService(string rootPath)
+        {
+            _rootPath = rootPath;
+        }
+
         public int UpdateCount()
         {
-            var config = new Configuration();
-            config.Add(new MemoryConfigurationSource());
-            var KEY = "count";
-            var count = 1;
-            
-            var value = config.Get(KEY);
-            if (value != null)
-            {
-                count = int.Parse(value);
-                count++;
-            }
-            config.Set(KEY, count.ToString());
-            return count;
+            var hitCountFilePath = "\\Services\\hitcount.txt";
+            var fullPath = string.Concat(_rootPath, hitCountFilePath);
+            var count = int.Parse(File.ReadAllText(fullPath));
+            count++;
+            File.WriteAllText(fullPath, count.ToString());
 
+            return count;
         }
     }
 }
