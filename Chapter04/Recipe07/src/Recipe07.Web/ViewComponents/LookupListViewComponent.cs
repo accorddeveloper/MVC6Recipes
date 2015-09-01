@@ -7,11 +7,15 @@ namespace Recipe07.Web.ViewComponents
 {
     public class LookupListViewComponent : ViewComponent
     {
-        private readonly MoBContext db = new MoBContext();
+        private readonly MoBContext _db;
+        public LookupListViewComponent(MoBContext db)
+        {
+            _db = db;
+        }
 
         public IViewComponentResult Invoke()
         {
-            var query = from a in db.GenreLookUps
+            var query = from a in _db.GenreLookUps
                         select new SelectListItem { Text = a.GenreName, Value = a.GenreLookUpId.ToString() };
 
             return View(query.ToList());

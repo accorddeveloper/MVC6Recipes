@@ -7,12 +7,12 @@
   "licenseUrl": "",
 
   "dependencies": {
-    "EntityFramework.SqlServer": "7.0.0-beta4",
-    "EntityFramework.Commands": "7.0.0-beta4",
-    "Microsoft.Framework.ConfigurationModel.Json": "1.0.0-beta4",
-    "Microsoft.Framework.Caching.Memory": "1.0.0-beta4",
-    "Microsoft.Framework.Logging.Console": "1.0.0-beta4",
-    "Microsoft.AspNet.Mvc": "6.0.0-beta4" 
+    "EntityFramework.SqlServer": "7.0.0-beta6",
+    "EntityFramework.Commands": "7.0.0-beta6",
+    "Microsoft.Framework.Configuration.Json": "1.0.0-beta6",
+    "Microsoft.Framework.Caching.Memory": "1.0.0-beta6",
+    "Microsoft.Framework.Logging.Console": "1.0.0-beta6",
+    "Microsoft.AspNet.Mvc": "6.0.0-beta6" 
   },
   "commands": {
 		"ef" : "EntityFramework.Commands"
@@ -21,10 +21,10 @@
     "dnx451": { },
     "dnxcore50" : {
       "dependencies": {
-        "System.Collections": "4.0.10-beta-22816",
-        "System.Linq": "4.0.0-beta-22816",
-        "System.Threading": "4.0.10-beta-22816",
-        "Microsoft.CSharp": "4.0.0-beta-22816"
+        "System.Collections": "4.0.10-beta-23109",
+        "System.Linq":  "4.0.0-beta-23109",
+        "System.Threading": "4.0.10-beta-23109",
+        "Microsoft.CSharp": "4.0.0-beta-23109"
       }
     }
   }

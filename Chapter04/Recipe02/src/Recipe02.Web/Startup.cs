@@ -7,21 +7,38 @@ using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Routing;
-using Microsoft.Framework.ConfigurationModel;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
+using Microsoft.Framework.Configuration;
+using Microsoft.Framework.Configuration.Helper;
+using Microsoft.Framework.Runtime;
 
 namespace Recipe02.Web
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        // Beta 4
+        //public Startup(IHostingEnvironment env)
+        //{
+        //    // Setup configuration sources.
+        //    var configuration = new Configuration()
+        //        .AddJsonFile("config.json")
+        //        .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
+        //    }
+        //    configuration.AddEnvironmentVariables();
+        //    Configuration = configuration;
+        //}
+
+        // Beta 6
+        public Startup(IHostingEnvironment env,  IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-            Configuration = new Configuration()
+            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
                 .AddJsonFile("config.json")
                 .AddEnvironmentVariables();
+
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; set; }
@@ -29,14 +46,15 @@ namespace Recipe02.Web
         // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
+
+            // Beta 4
+            //services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
+
+            // Beta 6
+            services.Configure<Recipe02.Web.AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
 
             // Add MVC services to the services container.
             services.AddMvc();
-
-            // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
-            // You will also need to add the Microsoft.AspNet.Mvc.WebApiCompatShim package to the 'dependencies' section of project.json.
-            // services.AddWebApiConventions();
 
         }
 
@@ -52,7 +70,10 @@ namespace Recipe02.Web
             if (env.IsEnvironment("Development"))
             {
                 app.UseBrowserLink();
-                app.UseErrorPage(ErrorPageOptions.ShowAll);
+                //app.UseErrorPage(ErrorPageOptions.ShowAll);
+                var errorPageOptions = new ErrorPageOptions();
+                errorPageOptions.SourceCodeLineCount = 10;
+                app.UseErrorPage(errorPageOptions);
             }
             else
             {

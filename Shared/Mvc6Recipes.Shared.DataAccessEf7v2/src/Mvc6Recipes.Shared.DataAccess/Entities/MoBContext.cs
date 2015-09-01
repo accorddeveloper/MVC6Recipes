@@ -1,7 +1,7 @@
 using Microsoft.Data.Entity;
 using Microsoft.Data.Entity.Infrastructure;
 using Microsoft.Data.Entity.Metadata;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 
 namespace Mvc6Recipes.Shared.DataAccess
@@ -103,11 +103,12 @@ namespace Mvc6Recipes.Shared.DataAccess
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            var config = new Configuration()
-                .AddJsonFile("config.json");
-            var constr = config.Get("Data:DefaultConnection:ConnectionString");
-            options.UseSqlServer(constr);
-            base.OnConfiguring(options);
+            //var builder = new ConfigurationBuilder(".")
+            //     .AddJsonFile("config.json");
+            //var config = builder.Build();
+            //var constr = config.Get("Data:DefaultConnection:ConnectionString");
+            //options.UseSqlServer(constr);
+            //base.OnConfiguring(options);
 
         }
 

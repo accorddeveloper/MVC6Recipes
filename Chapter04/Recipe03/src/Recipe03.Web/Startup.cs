@@ -1,26 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Authentication.Facebook;
-using Microsoft.AspNet.Authentication.Google;
+﻿using Microsoft.AspNet.Authentication.Facebook;
 using Microsoft.AspNet.Authentication.MicrosoftAccount;
-using Microsoft.AspNet.Authentication.Twitter;
 using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Diagnostics;
 using Microsoft.AspNet.Diagnostics.Entity;
 using Microsoft.AspNet.Hosting;
 using Microsoft.AspNet.Http;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Routing;
+using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.Data.Entity;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
-using Microsoft.Framework.Logging.Console;
-using Microsoft.Framework.Runtime;
 using Recipe03.Web.Models;
+using Microsoft.Framework.Configuration.Helper;
+using Microsoft.Framework.Runtime;
 
 namespace Recipe03.Web
 {
@@ -29,7 +21,7 @@ namespace Recipe03.Web
         public Startup(IHostingEnvironment env)
         {
             // Setup configuration sources.
-            var configuration = new Configuration()
+            var configuration = new ConfigurationBuilder()
                 .AddJsonFile("config.json")
                 .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
 
@@ -40,7 +32,7 @@ namespace Recipe03.Web
                 configuration.AddUserSecrets();
             }
             configuration.AddEnvironmentVariables();
-            Configuration = configuration;
+            Configuration = configuration.Build();
         }
 
         public IConfiguration Configuration { get; set; }
@@ -49,7 +41,7 @@ namespace Recipe03.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // Add Application settings to the services container.
-            services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
+            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
 
             // Add EF services to the services container.
             services.AddEntityFramework()
@@ -97,13 +89,15 @@ namespace Recipe03.Web
             if (env.IsEnvironment("Development"))
             {
                 app.UseBrowserLink();
-                app.UseErrorPage(ErrorPageOptions.ShowAll);
+                // Beta 4
+                //app.UseErrorPage(ErrorPageOptions.ShowAll);
+
+                // Beta 6
+                app.UseErrorPage();
                 app.UseDatabaseErrorPage(DatabaseErrorPageOptions.ShowAll);
             }
             else
             {
-                // Add Error handling middleware which catches all application specific errors and
-                // sends the request to the following path or controller action.
                 app.UseErrorHandler("/Home/Error");
             }
 
@@ -113,13 +107,6 @@ namespace Recipe03.Web
             // Add cookie-based authentication to the request pipeline.
             app.UseIdentity();
 
-            // Add authentication middleware to the request pipeline. You can configure options such as Id and Secret in the ConfigureServices method.
-            // For more information see http://go.microsoft.com/fwlink/?LinkID=532715
-            // app.UseFacebookAuthentication();
-            // app.UseGoogleAuthentication();
-            // app.UseMicrosoftAccountAuthentication();
-            // app.UseTwitterAuthentication();
-
             // Add MVC to the request pipeline.
             app.UseMvc(routes =>
             {
@@ -128,8 +115,6 @@ namespace Recipe03.Web
                     template: "{controller}/{action}/{id?}",
                     defaults: new { controller = "Home", action = "Index" });
 
-                // Uncomment the following line to add a route for porting Web API 2 controllers.
-                // routes.MapWebApiRoute("DefaultApi", "api/{controller}/{id?}");
             });
         }
     }

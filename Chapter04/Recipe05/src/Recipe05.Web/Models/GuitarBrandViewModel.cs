@@ -10,10 +10,4 @@ namespace Recipe05.Web.Models
 
         public GuitarBrand SelectedBrand { get; set; }
     }
-
-    public class GuitarBrand
-    {
-        public int GuitarBrandId { get; set; }
-        public string Name { get; set; }
-    }
 }
