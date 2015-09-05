@@ -12,27 +12,19 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Recipe03.Web.Models;
 using Microsoft.Framework.Configuration.Helper;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 
 namespace Recipe03.Web
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env)
+        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
-            var configuration = new ConfigurationBuilder()
-                .AddJsonFile("config.json")
-                .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
+            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
+                .AddJsonFile("config.json");
 
-            if (env.IsEnvironment("Development"))
-            {
-                // This reads the configuration keys from the secret store.
-                // For more details on using the user secret store see http://go.microsoft.com/fwlink/?LinkID=532709
-                configuration.AddUserSecrets();
-            }
-            configuration.AddEnvironmentVariables();
-            Configuration = configuration.Build();
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; set; }
@@ -41,7 +33,7 @@ namespace Recipe03.Web
         public void ConfigureServices(IServiceCollection services)
         {
             // Add Application settings to the services container.
-            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             // Add EF services to the services container.
             services.AddEntityFramework()

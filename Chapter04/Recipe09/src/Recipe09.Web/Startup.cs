@@ -11,7 +11,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 
 namespace Recipe09.Web
 {
@@ -32,7 +32,7 @@ namespace Recipe09.Web
         // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             // Add MVC services to the services container.
             services.AddMvc();
@@ -44,8 +44,6 @@ namespace Recipe09.Web
         {
             // Configure the HTTP request pipeline.
 
-            // Add the console logger.
-            loggerfactory.AddConsole();
 
             // Add the following to the request pipeline only in development environment.
             if (env.IsEnvironment("Development"))

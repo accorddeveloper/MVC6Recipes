@@ -12,7 +12,7 @@ using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.Configuration.Helper;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 
 namespace Recipe02.Web
 {
@@ -51,7 +51,7 @@ namespace Recipe02.Web
             //services.Configure<AppSettings>(Configuration.GetSubKey("AppSettings"));
 
             // Beta 6
-            services.Configure<Recipe02.Web.AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
+            services.Configure<Recipe02.Web.AppSettings>(Configuration.GetSection("AppSettings"));
 
             // Add MVC services to the services container.
             services.AddMvc();

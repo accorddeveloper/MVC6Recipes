@@ -11,7 +11,7 @@ using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Logging.Console;
-using Microsoft.Framework.Runtime;
+using Microsoft.Dnx.Runtime;
 using Microsoft.Data.Entity;
 using Mvc6Recipes.Shared.DataAccess;
 
@@ -34,7 +34,7 @@ namespace Recipe07.Web
         // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.Configure<AppSettings>(Configuration.GetConfigurationSection("AppSettings"));
+            services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddEntityFramework()
                 .AddSqlServer()
                 .AddDbContext<MoBContext>(options =>
