@@ -1,0 +1,2 @@
+﻿Most of the classes in this project where generated using the following command:
+dnx ef dbcontext scaffold "Server=.\sql2014;Database=Mvc6RecipesSharedDb;Trusted_Connection=True;MultipleActiveResultSets=true" EntityFramework.SqlServer
