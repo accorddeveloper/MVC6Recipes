@@ -9,9 +9,14 @@ using Microsoft.Data.Entity.SqlServer.Metadata;
 namespace Recipe06.Dal.Migrations
 {
     [DbContext(typeof(ArtistContext))]
-    partial class ArtistContextModelSnapshot : ModelSnapshot
+    partial class Initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        public override string Id
+        {
+            get { return "20150920211300_Initial"; }
+        }
+
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .Annotation("ProductVersion", "7.0.0-beta7-15540")

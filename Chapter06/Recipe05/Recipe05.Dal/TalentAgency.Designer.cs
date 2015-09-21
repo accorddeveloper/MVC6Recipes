@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\MVC6Recipes\MVC6Recipes\Recipe05\Recipe05.Dal\TalentAgency.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\WorkingFolder\MVCBook\Second Edition\MVC6Recipes\Chapter06\Recipe05\Recipe05.Dal\TalentAgency.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

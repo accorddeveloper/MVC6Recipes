@@ -1,5 +1,5 @@
 ﻿{
   "ConnectionStrings": {
-    "TalentAgencyContainer": "metadata=res://*/TalentAgency.csdl|res://*/TalentAgency.ssdl|res://*/TalentAgency.msl;provider=System.Data.SqlClient;provider connection string='data source=.;initial catalog=Chapter06Recipe05;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework'"
+    "TalentAgencyContainer": "metadata=res://*/TalentAgency.csdl|res://*/TalentAgency.ssdl|res://*/TalentAgency.msl;provider=System.Data.SqlClient;provider connection string='data source=.\\sql2014;initial catalog=Chapter05Recipe05;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework'"
   } 
 }

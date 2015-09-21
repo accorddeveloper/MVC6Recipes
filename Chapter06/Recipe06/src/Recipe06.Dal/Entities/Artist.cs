@@ -12,8 +12,6 @@ namespace Recipe06.Dal.Entities
         public string Provence { get; set; }
         public string City { get; set; }
         public DateTime CreateDate { get; set; }
-        public DateTime ModifiedDate { get; set; }
-        public string WebSite { get; set; }
 
         public virtual ICollection<ArtistSkill> ArtistSkills { get; set; }
 

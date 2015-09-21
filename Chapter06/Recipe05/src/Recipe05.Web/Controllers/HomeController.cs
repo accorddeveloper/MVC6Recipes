@@ -1,19 +1,24 @@
 ﻿using Microsoft.AspNet.Mvc;
 using System.Linq;
 using Recipe05.Dal;
-using Microsoft.Framework.ConfigurationModel;
+using Microsoft.Framework.Configuration;
+using Microsoft.Framework.OptionsModel;
 
 namespace Recipe05.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private TalentAgencyContainer context = new TalentAgencyContainer(
-            new Configuration().AddJsonFile("dbconfig.json").Get("ConnectionStrings:TalentAgencyContainer")
-            );
-        
+        private TalentAgencyContainer _context;
+
+        public HomeController(TalentAgencyContainer context)
+        {
+            _context = context;
+
+        }
+
         public IActionResult Index()
         {
-            var artists = from a in context.Artists
+            var artists = from a in _context.Artists
                           select a;
             var model = artists.ToList();
             return View(model);
@@ -40,7 +45,7 @@ namespace Recipe05.Web.Controllers
 
         protected override void Dispose(bool disposing)
         {
-            context.Dispose();
+            _context.Dispose();
             base.Dispose(disposing);    
         }
     }

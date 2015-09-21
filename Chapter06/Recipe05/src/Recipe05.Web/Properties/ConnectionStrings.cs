@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Recipe01.Web
+namespace Recipe05.Web
 {
-    public class AppSettings
+    public class ConnectionStrings
     {
-        public string SiteTitle { get; set; }
+        public string TalentAgencyContainer { get; set; }
     }
 }

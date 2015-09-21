@@ -7,8 +7,12 @@
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
+IF  NOT EXISTS (SELECT name FROM master.dbo.sysdatabases WHERE name = N'Chapter05Recipe05')
+
+CREATE DATABASE [Chapter05Recipe05]
+
 GO
-USE [Chapter06Recipe05];
+USE [Chapter05Recipe05];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO

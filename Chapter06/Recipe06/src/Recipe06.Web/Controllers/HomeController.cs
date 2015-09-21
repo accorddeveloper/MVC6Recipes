@@ -3,14 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
+using Recipe06.Dal.Context;
 
 namespace Recipe06.Web.Controllers
 {
     public class HomeController : Controller
     {
+        private ArtistContext _context;
+        public HomeController(ArtistContext context)
+        {
+            _context = context;
+        }
         public IActionResult Index()
         {
-            return View();
+            var model = _context.Artists.ToList();
+            return View(model);
         }
 
         public IActionResult About()
